@@ -1,0 +1,40 @@
+:root{--bg:#07050d;--p:#b79cff;--g:#d4af37;--t:#e9e2f5;--card:#120d20cc}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:radial-gradient(circle at 50% 0,#1a1030,var(--bg) 60%);color:var(--t);font-family:'Cormorant Garamond',serif;font-size:1.2rem;line-height:1.7;overflow-x:hidden}
+#stars{position:fixed;inset:0;z-index:-1}
+#glow{position:fixed;width:340px;height:340px;border-radius:50%;background:radial-gradient(#8e6bd144,transparent 70%);pointer-events:none;transform:translate(-50%,-50%);z-index:0}
+nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:.8rem 5%;background:#07050dcc;backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #b79cff22}
+nav a{color:var(--t);text-decoration:none;font-family:Cinzel,serif;font-size:.85rem;margin-left:1.2rem;transition:.3s}
+nav a:hover,.logo{color:var(--g)}.logo{margin:0!important;font-size:1rem!important}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 1rem 2rem;position:relative}
+.sigil{position:absolute;width:min(620px,90vw);color:#b79cff33;animation:spin 60s linear infinite}
+.moon{width:90px;animation:float 5s ease-in-out infinite;filter:drop-shadow(0 0 25px #b79cff)}
+h1{font-family:'Cinzel Decorative',serif;font-size:clamp(2.2rem,8vw,5rem);background:linear-gradient(90deg,var(--g),#fff,var(--p),var(--g));background-size:300%;-webkit-background-clip:text;color:transparent;animation:shine 6s linear infinite;margin:1rem 0 .3rem;position:relative}
+.tag{font-family:Cinzel,serif;letter-spacing:.25em;color:var(--p);font-size:.9rem;position:relative}.sub{margin:.8rem 0 1.5rem;font-style:italic;position:relative}
+.btn{display:inline-block;padding:.7rem 1.8rem;margin:.3rem;border:1px solid var(--g);background:linear-gradient(135deg,#5b3aa5,#2a1457);color:#fff;font-family:Cinzel,serif;text-decoration:none;border-radius:40px;transition:.3s;position:relative;box-shadow:0 0 18px #8e6bd166}
+.btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 0 35px #b79cffaa}.btn.ghost{background:transparent}
+.wrap{max-width:1050px;margin:0 auto;padding:5rem 1.2rem;position:relative}.center{text-align:center}
+h2{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,5vw,2.6rem);text-align:center;color:var(--g);margin-bottom:1rem;text-shadow:0 0 18px #d4af3766}
+.lead{text-align:center;max-width:720px;margin:0 auto 2rem}.note{text-align:center;font-style:italic;color:#bfb3d6;margin-top:1.5rem;font-size:1.05rem}
+.acc details{background:var(--card);border:1px solid #b79cff33;border-radius:12px;margin:.7rem 0;padding:.9rem 1.2rem;transition:.3s}
+.acc details:hover,.acc details[open]{border-color:var(--g);box-shadow:0 0 22px #8e6bd144}
+summary{cursor:pointer;font-family:Cinzel,serif;color:var(--p);list-style:none}summary::before{content:"✦ ";color:var(--g)}
+details div{margin-top:.7rem;animation:fade .5s}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem}
+.card{background:var(--card);border:1px solid #b79cff33;border-radius:16px;padding:1.6rem;text-align:center;transition:.4s;display:flex;flex-direction:column;gap:.4rem}
+.card:hover{transform:translateY(-8px) rotate(-.5deg);border-color:var(--g);box-shadow:0 10px 40px #8e6bd166}.card.hl{border-color:var(--g)}
+.ico{font-size:2.2rem;color:var(--g);animation:float 4s ease-in-out infinite}.card h3{font-family:Cinzel,serif;color:var(--p)}
+.price{margin-top:auto;font-family:Cinzel,serif;color:var(--g);font-size:1.5rem}small{color:#bfb3d6}
+.pendwrap{display:flex;justify-content:center;height:150px;overflow:hidden}.pendulum{width:70px;transform-origin:50% 0;animation:swing 3s ease-in-out infinite}
+.tcard{width:230px;height:360px;margin:1rem auto;perspective:900px;cursor:pointer;position:relative}
+.face{position:absolute;inset:0;border-radius:16px;backface-visibility:hidden;transition:transform .9s;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.2rem;border:2px solid var(--g);font-family:Cinzel,serif}
+.back{background:repeating-linear-gradient(45deg,#2a1457,#2a1457 10px,#1a0d38 10px,#1a0d38 20px);font-size:1.6rem;color:var(--g);box-shadow:0 0 30px #8e6bd1aa;animation:pulse 3s infinite}
+.front{background:#120d20;transform:rotateY(180deg);font-size:1rem}.front h3{color:var(--g);margin-bottom:.6rem}
+.tcard.flip .back{transform:rotateY(180deg)}.tcard.flip .front{transform:rotateY(360deg)}
+footer{text-align:center;padding:2rem 1rem;border-top:1px solid #b79cff22;color:#bfb3d6;font-size:.95rem}
+.reveal{opacity:0;transform:translateY(50px);transition:1s}.reveal.show{opacity:1;transform:none}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{50%{transform:translateY(-14px)}}
+@keyframes shine{to{background-position:300%}}@keyframes swing{0%,100%{transform:rotate(-28deg)}50%{transform:rotate(28deg)}}
+@keyframes fade{from{opacity:0}}@keyframes pulse{50%{box-shadow:0 0 55px #b79cff}}
+@media(max-width:700px){.links{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
